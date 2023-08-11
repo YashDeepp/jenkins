@@ -1,0 +1,12 @@
+Job URL
+http://18.212.193.129:8080/job/build/build?token=mybuildtoken
+
+Token
+admin:116f3827dc3bd4f42c859539b079c9ecdc
+
+CRUMB
+wget -q --auth-no-challenge --user admin --password 1906 --output-document - 'http://52.91.104.0:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+
+Jenkins-Crumb:5c1113816d308c7fb59bf9796669dfecbb3708af84db3ee9f3acd0048b9d6ef8
+
+curl -I -X POST http://admin:116f3827dc3bd4f42c859539b079c9ecdc@52.91.104.0:8080/job/build/build?token=mybuildtoken -H "Jenkins-Crumb:5c1113816d308c7fb59bf9796669dfecbb3708af84db3ee9f3acd0048b9d6ef8"
